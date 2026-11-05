@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { StatusBar, View } from "react-native";
+import { View } from "react-native";
 
 const BLUE = "#1877F2";
 const GRAY = "#65676B";
@@ -14,6 +14,13 @@ const tabs = [
     icon: "calendar-number-outline",
     activeIcon: "calendar-number",
   },
+  {
+    name: "task",
+    title: "Task",
+    icon: "add-circle-outline",
+    activeIcon: "add-circle",
+  },
+
   {
     name: "friends",
     title: "Friends",
@@ -31,13 +38,6 @@ const tabs = [
 export default function TabLayout() {
   return (
     <>
-      <StatusBar
-        barStyle="dark-content"
-        backgroundColor="black"
-        translucent={false}
-        hidden={false}
-      />
-
       <Tabs
         screenOptions={{
           headerShown: false,
@@ -45,13 +45,14 @@ export default function TabLayout() {
           tabBarActiveTintColor: BLUE,
           tabBarInactiveTintColor: GRAY,
           animation: "shift",
+          headerPressColor: "#0a3296",
 
           tabBarStyle: {
-            height: 58,
+            height: 42,
             backgroundColor: "#FFFFFF",
             borderTopWidth: 1,
             borderTopColor: "#E4E6EB",
-            paddingTop: 8,
+            paddingTop: 5,
             paddingBottom: 5,
           },
         }}
